@@ -1,0 +1,123 @@
+<div class="login-wrapper">
+
+   <!-- Video de fondo -->
+<video
+    class="bg-video"
+    autoplay
+    loop
+    muted
+    playsinline
+    [volume]="0">
+
+    <source src="/videos/login.mp4" type="video/mp4">
+
+</video>
+
+    <!-- Oscurece un poco el video -->
+    <div class="bg-overlay"></div>
+
+    <!-- Contenedor principal -->
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center position-relative">
+
+        <!-- Tarjeta de Login -->
+        <div class="card login-card shadow-lg border-0">
+
+            <!-- Logo y título -->
+            <div class="text-center mb-4">
+
+                <img
+                    src="img/logo-pin.svg"
+                    alt="Toque Final"
+                    class="login-logo">
+
+                <h1 class="fw-bold">
+                    Iniciar sesión
+                </h1>
+
+                <p class="text-secondary">
+                    Ingresa a tu cuenta para continuar.
+                </p>
+
+            </div>
+
+            <!-- Correo -->
+            <div class="mb-3">
+
+                <label
+                    for="correo"
+                    class="form-label">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="correo"
+                    type="email"
+                    placeholder="tu@email.com"
+                    autocomplete="email"
+                    class="form-control">
+
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-3">
+
+                <label
+                    for="password"
+                    class="form-label">
+                    Contraseña
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Ingresa tu contraseña"
+                    autocomplete="current-password"
+                    class="form-control">
+
+            </div>
+
+            <!-- Recuperar contraseña -->
+            <div class="text-end mb-3">
+
+                <a
+                    role="button"
+                    class="text-decoration-none small"
+                    style="cursor: pointer;">
+
+                    ¿Olvidaste tu contraseña?
+
+                </a>
+
+            </div>
+
+            <!-- Botón iniciar sesión -->
+            <button
+                class="btn btn-primary w-100 mb-3"
+                (click)="GoHome()">
+
+                Iniciar sesión
+
+            </button>
+
+            <!-- Registro -->
+            <div class="text-center">
+
+                <span class="text-secondary">
+                    ¿No tienes una cuenta?
+                </span>
+
+                <a
+                    routerLink="/register"
+                    class="text-decoration-none">
+
+                    Regístrate
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

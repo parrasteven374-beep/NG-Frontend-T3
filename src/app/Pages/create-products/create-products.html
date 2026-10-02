@@ -1,0 +1,78 @@
+<div class="producto-wrapper">
+
+  <!-- Video de fondo -->
+  <video class="bg-video" autoplay loop muted [muted]="true" playsinline>
+    <source src="videos/ProductNew.mp4" type="video/mp4">
+  </video>
+
+  <!-- Capa oscura para que se lea el formulario -->
+  <div class="bg-overlay"></div>
+
+  <div class="container py-5 position-relative contenido">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+
+        <div class="card card-producto shadow-lg border-0 rounded-4">
+          <div class="card-body p-4 p-md-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 class="fw-bold text-primary mb-0">Nuevo Producto</h3>
+            </div>
+
+            <form (ngSubmit)="RegisterProduct()">
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" [(ngModel)]="newproduct.nombre" required>
+                <label for="nombre">Nombre del producto</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Descripción" id="descripcion" style="height: 100px" name="descripcion" [(ngModel)]="newproduct.descripcion"></textarea>
+                <label for="descripcion">Descripción</label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="precio" placeholder="Precio" name="precio" [(ngModel)]="newproduct.precio" required>
+                    <label for="precio">Precio ($)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="stock" placeholder="Stock" name="stock" [(ngModel)]="newproduct.stock" required>
+                    <label for="stock">Stock disponible</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input de tipo ARCHIVO en lugar de texto -->
+              <div class="mb-4">
+                <label for="imagenFile" class="form-label fw-semibold">Sube una foto del producto (Requerida)</label>
+                <input type="file" class="form-control form-control-lg" id="imagenFile" accept="image/*" (change)="onFileSelected($event)" required>
+              </div>
+
+              <!-- Vista previa de la imagen escogida -->
+              @if (newproduct.imagenUrl) {
+                <div class="text-center mb-4">
+                  <img [src]="newproduct.imagenUrl" alt="Vista previa" class="img-fluid rounded-3" style="max-height: 200px;">
+                </div>
+              }
+
+              <div class="d-grid">
+                <!-- El botón se deshabilita si no hay imagen para evitar errores en la API -->
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold shadow-sm" [disabled]="!newproduct.imagenUrl">
+                  Guardar Producto
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

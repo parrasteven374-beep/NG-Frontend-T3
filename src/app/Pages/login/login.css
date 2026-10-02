@@ -1,0 +1,107 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.login-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* ===== VIDEO DE FONDO ===== */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+/* ===== CAPA OSCURA ===== */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+/* ===== CONTENIDO ===== */
+.login-wrapper .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== TARJETA ===== */
+.login-card {
+    font-size: min(0.85vw, 1.75vh);
+
+    width: 26em;
+    padding: 2.2em;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(6px);
+
+    border-radius: 1.2em;
+}
+
+/* ===== LOGO ===== */
+.login-card .login-logo {
+    width: 4.5em;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+/* ===== TITULO ===== */
+.login-card h1 {
+    font-size: 2em;
+}
+
+/* ===== TEXTOS ===== */
+.login-card p,
+.login-card span,
+.login-card a,
+.login-card .form-label {
+    font-size: 1em;
+}
+
+.login-card .small {
+    font-size: 0.85em;
+}
+
+/* ===== INPUTS Y BOTÓN ===== */
+.login-card .form-control,
+.login-card .btn {
+    font-size: 1em;
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+}
+
+/* ===== ESPACIADOS ===== */
+.login-card .mb-3 {
+    margin-bottom: 1em !important;
+}
+
+.login-card .mb-4 {
+    margin-bottom: 1.5em !important;
+}
+
+/* ===== CELULAR ===== */
+@media (max-aspect-ratio: 3/4) {
+
+    .login-card {
+        font-size: 4vw;
+        width: 90vw;
+    }
+
+}

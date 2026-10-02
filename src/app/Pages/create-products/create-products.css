@@ -1,0 +1,34 @@
+.producto-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    /* respaldo si el video no carga */
+}
+
+/* fixed: el video se queda quieto si el formulario hace scroll */
+.bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.contenido {
+    z-index: 2;
+}
+
+.card-producto {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(6px);
+}

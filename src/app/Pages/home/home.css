@@ -1,0 +1,165 @@
+:host {
+    display: block;
+    background: #f5f7fb;
+}
+
+/* Barra fija arriba en toda la página */
+.navbar-transparente {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-transparente .navbar-brand,
+.navbar-transparente .nav-link {
+    color: #fff;
+}
+
+.navbar-transparente .nav-link:hover {
+    color: #6ea8fe;
+}
+
+/* Para que al dar clic en "Productos" el título no quede tapado por la barra */
+#productos {
+    scroll-margin-top: 90px;
+}
+
+/* Hero y footer con video de fondo */
+.seccion-video {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.oscuro {
+    background: rgba(20, 20, 20, 0.85);
+}
+
+.contenido {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    min-height: 100vh;
+}
+
+/* Productos */
+.buscador {
+    max-width: 400px;
+    border-radius: 999px;
+}
+
+.card-producto {
+    position: relative;
+    border: 2px solid #0d6efd;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+}
+
+.card-producto .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    background: #fff;
+    padding: 1rem;
+}
+
+/* Ícono de eliminar: solo aparece al pasar el mouse por la card */
+.btn-eliminar {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+}
+
+.card-producto:hover .btn-eliminar {
+    opacity: 1;
+}
+
+.btn-eliminar:hover {
+    background: #fde8e8;
+}
+
+.btn-eliminar svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #dc3545;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Footer */
+.footer {
+    min-height: 350px;
+    background: #1e1e1e;
+}
+
+.footer-info {
+    width: fit-content;
+}
+
+.social a {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.social a:hover {
+    background: #0d6efd;
+}
+
+.social svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+}
+
+.social svg.linea {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
